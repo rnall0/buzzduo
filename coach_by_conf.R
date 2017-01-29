@@ -1,4 +1,4 @@
-#Specify conference and collect yearly totals for each time in that conference.
+#Specify conference and collect yearly totals for each time in that conference and output to a SQLite database.
 #Currently leaves out Independents. 
 
 library(rvest)
