@@ -3,7 +3,7 @@ library(stringr)
 library(dplyr)
 library(RSQLite)
 
-setwd("C:\\coding\\R\\cfb\\data\\")
+setwd("C:\\path\\to\\cfb\\data\\")
 
 conf<-"sec" #aac, acc, big10, big12, conferenceusa, mac, mountainwest,
             #pac10, sec, sunbelt
@@ -25,8 +25,7 @@ get_yearly_totals<-function(webaddress){
   colnames(yt.clean) <- c("Year","Coach","Win","Loss","Tie","Pct","PF","PA", "Delta", "School")
   yt.clean$School<-paste(as.character(strsplit(url, "/")[[1]][7]))
   yt.clean <- yt.clean[-nrow(yt.clean),] #last row contains totals
-  yt.clean <- yt.clean[-c(1:5), ] #remove first 5 rows
-  
+  yt.clean <- yt.clean[-c(1:5), ] #remove first 5 rows  
 }
 
 yearly.totals.matrix<- do.call(rbind,lapply(as.character(links$href),get_yearly_totals))
