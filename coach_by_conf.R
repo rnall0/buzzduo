@@ -1,3 +1,6 @@
+#Specify conference and collect yearly totals for each time in that conference.
+#Currently leaves out Independents. 
+
 library(rvest)
 library(stringr)
 library(dplyr)
