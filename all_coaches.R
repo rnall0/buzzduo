@@ -8,7 +8,7 @@ setwd("C:\\to\\output")
 weblink <- paste("http://www.cfbdatawarehouse.com/data/div_ia_conf_index.php")
 webpage <- read_html(weblink)
 nodeslinks<- html_nodes(webpage, xpath = "//a")
-needlinks<-nodeslinks[33:169]
+needlinks<-nodeslinks[33:169] #proper links in this range
 links<-bind_rows(lapply(xml_attrs(needlinks), function(x) data.frame(as.list(x), stringsAsFactors=FALSE)))
 links<-as.data.frame(links[!grepl("div_ia", links$href),])
 colnames(links)[1]<-"href"
@@ -25,8 +25,7 @@ get_yearly_totals<-function(webaddress){
   colnames(yt.clean) <- c("Year","Coach","Win","Loss","Tie","Pct","PF","PA", "Delta", "School")
   yt.clean$School<-paste(as.character(strsplit(url, "/")[[1]][7]))
   yt.clean <- yt.clean[-nrow(yt.clean),] #last row contains totals
-  yt.clean <- yt.clean[-c(1:5), ] #remove first 5 rows
-  
+  yt.clean <- yt.clean[-c(1:5), ] #remove first 5 rows  
 }
 
 system.time(yearly.totals.matrix<- do.call(rbind,lapply(as.character(links$href),get_yearly_totals)))
