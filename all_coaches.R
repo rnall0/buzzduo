@@ -39,8 +39,8 @@ dbWriteTable(conn = db, name = "yearly_totals", value = yearly.totals)
 
 #test to make sure it's there
 #dbListTables(db)
-#dbListFields(db, paste(conf, "_yt", sep=""))
-#head(dbReadTable(db, paste(conf, "_yt", sep="")))
+#dbListFields(db, "yearly_totals")
+#head(dbReadTable(db, "yearly_totals"))
 dbDisconnect(db)
 
 
