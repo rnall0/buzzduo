@@ -3,7 +3,7 @@ library(ggplot2)
 library(directlabels)
 
 db<-dbConnect(SQLite(), dbname = "cfbdata.sqlite")
-rs<-dbSendQuery(db, "select * from sec_yt where School = 'auburn'")
+rs<-dbSendQuery(db, "select * from yearly_totals where School = 'auburn'")
 aub<- dbFetch(rs, n = -1)
 dbDisconnect(db)
 
