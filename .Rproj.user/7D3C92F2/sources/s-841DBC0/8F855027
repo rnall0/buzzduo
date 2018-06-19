@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1529371834413.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8F855027",
+    "lastKnownWriteTime" : 1529449198,
+    "last_content_update" : 1529449198375,
+    "path" : "C:/Projects/GitHub/buzzduo/R/gridiron.R",
+    "project_path" : "R/gridiron.R",
+    "properties" : {
+        "cursorPosition" : "12,34",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
